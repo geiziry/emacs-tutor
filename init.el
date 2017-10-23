@@ -1,5 +1,18 @@
-(setq inhibit-startup-message t)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (org-bullets which-key use-package try))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
 
+(setq inhibit-startup-message t)
+(tool-bar-mode -1)
 (setq url-proxy-services
       '(("no_proxy" . "^\\(localhost\\|10.*\\)")
 	("http" . "127.0.0.1:3128")
@@ -25,3 +38,8 @@
   :ensure t
   :config (which-key-mode))
 
+;;org-mode stuff
+(use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda() (org-bullets-mode 1))))
