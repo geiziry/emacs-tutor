@@ -43,3 +43,17 @@
   :ensure t
   :config
   (add-hook 'org-mode-hook (lambda() (org-bullets-mode 1))))
+
+(setq indo-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+
+
+(defalias 'list-buffers 'ibufer)
+;;(defalias 'list-buffers 'ibufer-other-window
+
+; If you like the tabbbar
+;(use-package tabbar
+;  :ensure t
+;  :config
+;  (tabbar-mode 1))
