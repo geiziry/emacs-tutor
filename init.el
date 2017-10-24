@@ -3,7 +3,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (org-bullets which-key use-package try))))
+ '(package-selected-packages (quote (ace-window org-bullets which-key use-package try))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -52,8 +52,19 @@
 (defalias 'list-buffers 'ibufer)
 ;;(defalias 'list-buffers 'ibufer-other-window
 
-; If you like the tabbbar
+;If you like the tabbbar
 ;(use-package tabbar
 ;  :ensure t
 ;  :config
 ;  (tabbar-mode 1))
+
+(use-package ace-window
+  :ensure t
+  :init
+  (progn
+    (global-set-key [remap other-window] 'ace-window)
+    (custom-set-faces
+     '(aw-leading-char-face
+       ((t (:inherit ace-jump-face-foreground :height 3.0)))))
+    ))
+
